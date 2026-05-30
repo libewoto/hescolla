@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - HeScolla Estudante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo">
+                <svg width="32" height="40" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0L0 5V13.84C0 21.05 5.12 27.8 12 30C18.88 27.8 24 21.05 24 13.84V5L12 0Z" fill="#CBA03B"/>
+                    <path d="M12 2.3L2.3 6.6V13.84C2.3 19.8 6.4 25.4 12 27.3C17.6 25.4 21.7 19.8 21.7 13.84V6.6L12 2.3Z" fill="#14163D"/>
+                </svg>
+                HeScolla
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="support.html">Suporte</a></li>
+                    <li><a href="privacy.html" class="active">Privacidade</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main style="padding: 4rem 0; max-width: 800px; margin: 0 auto;">
+            <h1>Política de Privacidade (App Estudante)</h1>
+            <p><strong>Última atualização: Maio de 2026</strong></p>
+
+            <div style="background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 2rem;">
+                <p>O aplicativo <strong>HeScolla Estudante</strong> foi desenvolvido sob princípios estritos de privacidade e segurança. Por ser focado na segurança de menores dentro do ambiente escolar, o aplicativo não coleta dados desnecessários, não exibe anúncios publicitários e não vende informações a terceiros.</p>
+            </div>
+
+            <h3 style="color: var(--accent-gold); margin-top: 2rem;">1. Coleta de ID do Dispositivo (Device ID)</h3>
+            <p>Para garantir a segurança do processo de chamada e evitar que a conta do estudante seja clonada ou acessada simultaneamente em dispositivos não autorizados, o aplicativo coleta e vincula a sessão de autenticação ao <strong>ID do Dispositivo (Device ID)</strong>. Se um novo login for detectado em outro aparelho, o token de acesso do dispositivo anterior é imediatamente recusado e invalidado pelo banco de dados. Essa é uma medida antifraude vital para a segurança escolar.</p>
+
+            <h3 style="color: var(--accent-gold); margin-top: 2rem;">2. Câmera e Leitura de QR Code</h3>
+            <p>O aplicativo solicita permissão de acesso à câmera do dispositivo <strong>exclusivamente para a leitura de QR Codes</strong> fornecidos pela escola ou pelo Responsável Legal. O aplicativo não grava, não armazena e não transmite fotos, vídeos ou o fluxo da câmera para nossos servidores. O processamento da imagem do QR Code ocorre de forma local no seu aparelho.</p>
+
+            <h3 style="color: var(--accent-gold); margin-top: 2rem;">3. Localização (Geofencing)</h3>
+            <p>Em certas escolas parceiras, a validação da chamada ou saída pode exigir que o aluno confirme sua presença no perímetro da escola (Geofence). O aplicativo poderá solicitar acesso à sua localização apenas no momento da leitura do QR Code para validar as coordenadas com o servidor da escola. O rastreamento de localização não é contínuo e não funciona em segundo plano (background).</p>
+
+            <h3 style="color: var(--accent-gold); margin-top: 2rem;">4. Dados Pessoais</h3>
+            <p>O aplicativo HeScolla Estudante opera de forma "recebedora". O cadastro e a gestão do perfil (nome, documentos) são geridos pelos <strong>Responsáveis Legais</strong> no aplicativo principal (HeScolla Responsáveis). Nenhum dado extra é exigido do estudante para operar este aplicativo.</p>
+
+            <h3 style="color: var(--accent-gold); margin-top: 2rem;">5. Contato</h3>
+            <p>Se você for pai, mãe ou responsável legal e tiver dúvidas sobre esta política, por favor visite nossa <a href="support.html">Central de Ajuda</a> ou envie um e-mail para suporte@hescolla.com.br.</p>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="support.html">Central de Ajuda</a>
+                <a href="privacy.html">Privacidade (Responsável)</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+            <p class="copyright">&copy; 2026 HeScolla. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
