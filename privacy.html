@@ -10,10 +10,15 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
             background-color: #f9f9f9;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .container {
@@ -61,12 +66,60 @@
             color: #666;
             margin-bottom: 30px;
         }
+        
+        /* Nav */
+        header {
+            background: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #14163D;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: #666;
+            font-weight: 500;
+        }
+        nav a:hover, nav a.active {
+            color: #14163D;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="hs_logo.png" alt="HeScolla Logo" height="30">
+            HeScolla
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="estudante.html">App Estudante</a></li>
+                <li><a href="support.html">Suporte</a></li>
+                <li><a href="privacy.html" class="active">Privacidade</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container">
+    <div class="main-content">
+        <div class="container">
         <div style="text-align: center; margin-bottom: 20px;">
             <img src="hs_logo.png" alt="HeScolla Logo" height="60">
         </div>
@@ -77,7 +130,7 @@
             "aplicativo"). Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos as
             suas informações pessoais e as informações dos menores sob sua responsabilidade, em total conformidade com a
             <strong>Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018)</strong> do Brasil e com as
-            diretrizes exigidas pelo <strong>Google Play Console</strong>.
+            diretrizes exigidas pelas <strong>Lojas de Aplicativos</strong>.
         </p>
 
         <p>Ao utilizar o aplicativo Hescolla, você concorda com a coleta e o uso de informações de acordo com esta
@@ -229,6 +282,8 @@
         </ul>
     </div>
 
-</body>
+    </div>
+    </div>
 
+</body>
 </html>
