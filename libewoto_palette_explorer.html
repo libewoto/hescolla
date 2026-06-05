@@ -1,0 +1,234 @@
+
+<h2 class="sr-only">Explorador de paletas de cores para a marca Libewoto, com pares de cores representando a dualidade Trabalho e Vida</h2>
+
+<style>
+  .pal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; padding: 1rem 0 2rem; }
+  .pal-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; cursor: pointer; transition: border-color 0.2s; }
+  .pal-card:hover { border-color: var(--color-border-secondary); }
+  .pal-card.selected { border: 2px solid var(--color-border-info); }
+  .pal-swatch { display: flex; height: 100px; }
+  .pal-half { flex: 1; display: flex; align-items: flex-end; padding: 10px 12px; }
+  .pal-hex { font-size: 11px; font-weight: 500; background: rgba(0,0,0,0.22); color: #fff; padding: 3px 7px; border-radius: 4px; letter-spacing: 0.5px; }
+  .pal-info { padding: 14px 16px; background: var(--color-background-primary); }
+  .pal-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .pal-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+  .pal-tags { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .pal-tag { font-size: 11px; padding: 3px 8px; border-radius: 4px; }
+  .tag-vida { background: #E1F5EE; color: #0F6E56; }
+  .tag-work { background: #E6F1FB; color: #185FA5; }
+
+  .logo-preview { padding: 1.5rem; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); margin-bottom: 2rem; background: var(--color-background-secondary); }
+  .logo-preview-title { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 1rem; letter-spacing: 0.5px; }
+  .logo-demos { display: flex; gap: 16px; flex-wrap: wrap; }
+  .logo-bg { border-radius: var(--border-radius-md); padding: 20px 28px; display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; min-width: 180px; }
+  .logo-wordmark { font-size: 28px; font-weight: 500; letter-spacing: -0.5px; }
+  .logo-sub { font-size: 9px; letter-spacing: 3px; opacity: 0.5; text-transform: uppercase; }
+
+  .meaning-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
+  .meaning-card { padding: 1rem 1.25rem; border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); }
+  .meaning-dot { width: 28px; height: 28px; border-radius: 50%; margin-bottom: 10px; }
+  .meaning-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .meaning-val { font-size: 13px; color: var(--color-text-primary); line-height: 1.5; }
+
+  .section-label { font-size: 11px; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; margin-top: 0; }
+
+  .btn-choose { width: 100%; margin-top: 16px; padding: 10px; font-size: 13px; }
+</style>
+
+<p class="section-label">Escolha um par de cores</p>
+
+<div class="pal-grid" id="palGrid">
+
+  <div class="pal-card" data-id="0" onclick="select(0)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#1B3A5C"><span class="pal-hex">#1B3A5C</span></div>
+      <div class="pal-half" style="background:#27AE7A"><span class="pal-hex">#27AE7A</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Marinho + Esmeralda</div>
+      <div class="pal-desc">Seriedade e crescimento. Tecnologia confiável que fertiliza a vida.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: ancoragem</span>
+        <span class="pal-tag tag-vida">Vida: renovação</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="1" onclick="select(1)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#2C2C3E"><span class="pal-hex">#2C2C3E</span></div>
+      <div class="pal-half" style="background:#E8A838"><span class="pal-hex">#E8A838</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Carvão + Âmbar</div>
+      <div class="pal-desc">Profissionalismo sólido com calor humano. Como a luz no fim do dia.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: solidez</span>
+        <span class="pal-tag tag-vida">Vida: calor</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="2" onclick="select(2)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#1C3D5A"><span class="pal-hex">#1C3D5A</span></div>
+      <div class="pal-half" style="background:#E05C4A"><span class="pal-hex">#E05C4A</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Petróleo + Coral</div>
+      <div class="pal-desc">Contraste vibrante. Estrutura fria + energia vital. Inconfundível.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: precisão</span>
+        <span class="pal-tag tag-vida">Vida: energia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="3" onclick="select(3)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#243447"><span class="pal-hex">#243447</span></div>
+      <div class="pal-half" style="background:#7B68EE"><span class="pal-hex">#7B68EE</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Ardósia + Lavanda</div>
+      <div class="pal-desc">Inovação e criatividade. Tecnologia que transcende o óbvio.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: inovação</span>
+        <span class="pal-tag tag-vida">Vida: imaginação</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="4" onclick="select(4)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#0A2540"><span class="pal-hex">#0A2540</span></div>
+      <div class="pal-half" style="background:#00C9A7"><span class="pal-hex">#00C9A7</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Meia-noite + Turquesa</div>
+      <div class="pal-desc">Alta tecnologia com vitalidade. Remete à água — fluidez e profundidade.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: profundidade</span>
+        <span class="pal-tag tag-vida">Vida: fluidez</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="5" onclick="select(5)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#3D2B1F"><span class="pal-hex">#3D2B1F</span></div>
+      <div class="pal-half" style="background:#5DB97C"><span class="pal-hex">#5DB97C</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Terra + Vegetal</div>
+      <div class="pal-desc">Raiz e crescimento. Para uma marca que acredita no humano antes do digital.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: raiz</span>
+        <span class="pal-tag tag-vida">Vida: florescimento</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="6" onclick="select(6)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#1A1A2E"><span class="pal-hex">#1A1A2E</span></div>
+      <div class="pal-half" style="background:#F4A261"><span class="pal-hex">#F4A261</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Noite + Pôr do Sol</div>
+      <div class="pal-desc">Contraste marcante. O fim de um ciclo que nutre o próximo começo.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: profundidade</span>
+        <span class="pal-tag tag-vida">Vida: renovação</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pal-card" data-id="7" onclick="select(7)">
+    <div class="pal-swatch">
+      <div class="pal-half" style="background:#2D4159"><span class="pal-hex">#2D4159</span></div>
+      <div class="pal-half" style="background:#D4E157"><span class="pal-hex">#D4E157</span></div>
+    </div>
+    <div class="pal-info">
+      <div class="pal-name">Aço + Lima</div>
+      <div class="pal-desc">Par ousado e contemporâneo. Firmeza e vitalidade ácida — difícil de ignorar.</div>
+      <div class="pal-tags">
+        <span class="pal-tag tag-work">Trabalho: estrutura</span>
+        <span class="pal-tag tag-vida">Vida: vitalidade</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="previewSection" style="display:none">
+  <p class="section-label">Prévia da marca</p>
+
+  <div class="logo-preview">
+    <div class="logo-preview-title">Como o logotipo ficaria com essa paleta</div>
+    <div class="logo-demos">
+      <div class="logo-bg" id="bgDark">
+        <div class="logo-wordmark" id="wmDark">Libewoto</div>
+        <div class="logo-sub" id="subDark">Life Better. Working Together.</div>
+      </div>
+      <div class="logo-bg" id="bgLight" style="border: 0.5px solid var(--color-border-tertiary);">
+        <div class="logo-wordmark" id="wmLight">Libewoto</div>
+        <div class="logo-sub" id="subLight">Life Better. Working Together.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Significado da dualidade</p>
+  <div class="meaning-row">
+    <div class="meaning-card">
+      <div class="meaning-dot" id="dotWork"></div>
+      <div class="meaning-label">Trabalho</div>
+      <div class="meaning-val" id="workMeaning"></div>
+    </div>
+    <div class="meaning-card">
+      <div class="meaning-dot" id="dotLife"></div>
+      <div class="meaning-label">Vida</div>
+      <div class="meaning-val" id="lifeMeaning"></div>
+    </div>
+  </div>
+
+  <button class="btn-choose" onclick="choose()" id="chooseBtn">Escolher esta paleta para a Libewoto ↗</button>
+</div>
+
+<script>
+const palettes = [
+  { work: '#1B3A5C', life: '#27AE7A', name: 'Marinho + Esmeralda', wm: 'Libewoto', workMeaning: 'Azul marinho: confiança, estrutura, autoridade. Base sólida para um grupo de tecnologia.', lifeMeaning: 'Verde esmeralda: crescimento orgânico, saúde, esperança. A vida florescendo.' },
+  { work: '#2C2C3E', life: '#E8A838', name: 'Carvão + Âmbar', wm: 'Libewoto', workMeaning: 'Carvão: seriedade, sofisticação, foco. A presença silenciosa que sustenta tudo.', lifeMeaning: 'Âmbar: calor humano, alegria, diversidade. A centelha que anima as pessoas.' },
+  { work: '#1C3D5A', life: '#E05C4A', name: 'Petróleo + Coral', wm: 'Libewoto', workMeaning: 'Azul petróleo: precisão, profundidade, estabilidade. Tecnologia robusta.', lifeMeaning: 'Coral: energia, emoção, vitalidade humana. O coração pulsante da comunidade.' },
+  { work: '#243447', life: '#7B68EE', name: 'Ardósia + Lavanda', wm: 'Libewoto', workMeaning: 'Ardósia: maturidade, seriedade discreta, confiabilidade. O peso do profissional.', lifeMeaning: 'Lavanda: criatividade, imaginação, inovação. O futuro que ainda não chegou.' },
+  { work: '#0A2540', life: '#00C9A7', name: 'Meia-noite + Turquesa', wm: 'Libewoto', workMeaning: 'Meia-noite: profundidade máxima, concentração, excelência técnica.', lifeMeaning: 'Turquesa: fluidez, bem-estar, frescor. Vida que corre livremente.' },
+  { work: '#3D2B1F', life: '#5DB97C', name: 'Terra + Vegetal', wm: 'Libewoto', workMeaning: 'Marrom terra: raiz, origem, humanidade. Produto feito por pessoas para pessoas.', lifeMeaning: 'Verde vegetal: florescimento, natureza, equilíbrio. Vida em harmonia.' },
+  { work: '#1A1A2E', life: '#F4A261', name: 'Noite + Pôr do Sol', wm: 'Libewoto', workMeaning: 'Azul-noite: profundidade, mistério, tecnologia avançada. O universo dos dados.', lifeMeaning: 'Pôr do sol: transição, renovação, calor afetivo. O momento em que tudo se conecta.' },
+  { work: '#2D4159', life: '#D4E157', name: 'Aço + Lima', wm: 'Libewoto', workMeaning: 'Aço azulado: durabilidade, engenharia, confiança. Estrutura que não cede.', lifeMeaning: 'Lima ácido: vitalidade extrema, jovialidade, diferenciação. Vida vibrante.' },
+];
+
+let cur = -1;
+function select(id) {
+  document.querySelectorAll('.pal-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.pal-card')[id].classList.add('selected');
+  cur = id;
+  const p = palettes[id];
+  document.getElementById('previewSection').style.display = 'block';
+  document.getElementById('bgDark').style.background = p.work;
+  document.getElementById('wmDark').style.color = p.life;
+  document.getElementById('subDark').style.color = '#fff';
+  document.getElementById('bgLight').style.background = '#F7F9FC';
+  document.getElementById('wmLight').style.color = p.work;
+  const subLight = document.getElementById('subLight');
+  subLight.style.color = p.work;
+  document.getElementById('dotWork').style.background = p.work;
+  document.getElementById('dotLife').style.background = p.life;
+  document.getElementById('workMeaning').textContent = p.workMeaning;
+  document.getElementById('lifeMeaning').textContent = p.lifeMeaning;
+}
+function choose() {
+  if (cur < 0) return;
+  const p = palettes[cur];
+  sendPrompt('Escolhi a paleta "' + p.name + '" (' + p.work + ' para Trabalho e ' + p.life + ' para Vida). Pode avançar com o desenvolvimento da identidade visual completa da Libewoto com essas cores.');
+}
+</script>
