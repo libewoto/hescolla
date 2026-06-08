@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato de Prestação de Serviços – HeScolla</title>
+    <meta name="description" content="Contrato de Prestação de Serviços de Tecnologia HeScolla para instituições de ensino.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="docs/favicon.ico">
+    <style>
+        :root {
+            --bg-primary: #0d0f1a;
+            --bg-secondary: #14163d;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b8;
+            --accent-gold: #CBA03B;
+            --accent-gold-light: #e8c060;
+            --accent-blue: #3a7bd5;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(203, 160, 59, 0.35);
+            --max-width: 900px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        /* ── Header ── */
+        header {
+            background: rgba(13, 15, 26, 0.95);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo img { height: 32px; }
+
+        .print-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 1px solid var(--border-gold);
+            color: var(--accent-gold);
+            padding: 0.55rem 1.25rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .print-btn:hover {
+            background: rgba(203, 160, 59, 0.1);
+        }
+
+        /* ── Hero ── */
+        .contract-hero {
+            background: linear-gradient(160deg, var(--bg-secondary) 0%, var(--bg-primary) 60%);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .contract-hero .badge {
+            display: inline-block;
+            background: rgba(203, 160, 59, 0.12);
+            border: 1px solid var(--border-gold);
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .contract-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--text-primary);
+            line-height: 1.25;
+            margin-bottom: 1.25rem;
+        }
+
+        .contract-hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .contract-hero p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1rem;
+        }
+
+        .doc-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .doc-meta span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ── Main Layout ── */
+        .contract-wrapper {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 3rem 2rem 6rem;
+        }
+
+        /* ── Table of Contents ── */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .toc h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .toc ol {
+            padding-left: 1.2rem;
+            column-count: 2;
+            column-gap: 2rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--accent-gold-light);
+        }
+
+        /* ── Parties Block ── */
+        .parties-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .party-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+        }
+
+        .party-card.contratante {
+            border-color: var(--border-gold);
+        }
+
+        .party-card h3 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .party-card.contratada h3 { color: var(--accent-blue); }
+        .party-card.contratante h3 { color: var(--accent-gold); }
+
+        .party-field {
+            margin-bottom: 0.75rem;
+        }
+
+        .party-field label {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+
+        .party-field .value {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .party-field .value.blank {
+            border-bottom: 1px solid var(--border);
+            min-width: 200px;
+            display: inline-block;
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-style: italic;
+            padding-bottom: 2px;
+        }
+
+        /* ── Clauses ── */
+        .clause {
+            margin-bottom: 3rem;
+            scroll-margin-top: 80px;
+        }
+
+        .clause-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .clause-num {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(203, 160, 59, 0.1);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        .clause h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            padding-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .clause p {
+            color: var(--text-secondary);
+            margin-bottom: 0.85rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .clause ul, .clause ol {
+            padding-left: 1.5rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .clause li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .clause strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Parágrafo único */
+        .paragrafo-unico {
+            border-left: 3px solid var(--border-gold);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: var(--text-secondary) !important;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: rgba(203, 160, 59, 0.06);
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0 !important;
+            color: var(--text-primary) !important;
+            font-weight: 500;
+        }
+
+        .warning-box {
+            background: rgba(220, 53, 69, 0.06);
+            border: 1px solid rgba(220, 53, 69, 0.25);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .warning-box p {
+            margin: 0 !important;
+            color: #e88a94 !important;
+        }
+
+        /* ── Plans Table ── */
+        .plans-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.875rem;
+        }
+
+        .plans-table th {
+            background: rgba(203, 160, 59, 0.1);
+            color: var(--accent-gold);
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-gold);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .plans-table td {
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .plans-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+            color: var(--text-primary);
+        }
+
+        /* ── Signature Area ── */
+        .signature-section {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 3rem;
+        }
+
+        .signature-section h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .date-line {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+            font-size: 0.9rem;
+        }
+
+        .date-line .blank {
+            border-bottom: 1px solid var(--text-secondary);
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        .sig-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .sig-block {
+            text-align: center;
+        }
+
+        .sig-line {
+            border-bottom: 1px solid var(--text-secondary);
+            margin-bottom: 0.75rem;
+            height: 50px;
+        }
+
+        .sig-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+        }
+
+        .sig-title {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .witnesses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .witnesses h3 {
+            grid-column: 1 / -1;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: rgba(13, 15, 26, 0.95);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        /* ── Print ── */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                font-size: 12px;
+            }
+            header, .print-btn, footer { display: none !important; }
+            .contract-hero {
+                background: #fff;
+                border-bottom: 2px solid #CBA03B;
+                color: #111;
+                padding: 2rem 1rem;
+            }
+            .contract-hero h1, .contract-hero p, .doc-meta span { color: #111 !important; }
+            .contract-wrapper { padding: 1rem 1cm; max-width: 100%; }
+            .toc { background: #f5f5f5; border-color: #CBA03B; }
+            .toc a { color: #333; }
+            .parties-block, .sig-grid, .witnesses { grid-template-columns: 1fr 1fr; }
+            .party-card { background: #f9f9f9; border: 1px solid #ccc; }
+            .clause p, .clause li { color: #333; }
+            .clause strong { color: #000; }
+            .clause-num { background: #f0f0f0; color: #CBA03B; border-color: #CBA03B; }
+            .clause h2 { color: #000; }
+            .plans-table th { background: #f0f0f0; color: #111; }
+            .plans-table td { color: #333; }
+            .highlight-box { background: #fffdf0; border-color: #CBA03B; }
+            .warning-box { background: #fff5f5; border-color: #dc3545; }
+            .highlight-box p, .warning-box p { color: #111 !important; }
+            .sig-line { border-bottom: 1px solid #333; }
+            .sig-name { color: #000; }
+            .sig-title, .sig-block { color: #555; }
+            .paragrafo-unico { color: #444 !important; }
+            .contract-hero .badge { background: #f0f0f0; color: #CBA03B; }
+        }
+
+        @media (max-width: 680px) {
+            .parties-block { grid-template-columns: 1fr; }
+            .sig-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .witnesses { grid-template-columns: 1fr; }
+            .toc ol { column-count: 1; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a href="docs/index.html" class="logo">
+                <img src="docs/hs_logo.png" alt="HeScolla Logo">
+                HeScolla
+            </a>
+            <button class="print-btn" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                    <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                </svg>
+                Imprimir / Salvar PDF
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="contract-hero">
+        <div class="badge">Documento Oficial</div>
+        <h1>Contrato de Prestação de<br><span>Serviços de Tecnologia</span></h1>
+        <p>Instrumento particular de prestação de serviços de plataforma tecnológica de controle e segurança escolar — Sistema HeScolla.</p>
+        <div class="doc-meta">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/></svg>
+                Versão: Junho / 2026
+            </span>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.998-.952l5.5-5.5.5.5a.5.5 0 0 0 .707 0l.5-.5 5.5 5.5a1 1 0 0 1-.709.952H14a.5.5 0 0 0 0 1h1a2 2 0 0 0 2-2v-5.5A.5.5 0 0 0 17 8z"/></svg>
+                comercial@hescolla.com.br
+            </span>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Belo Horizonte – MG, Brasil
+            </span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="contract-wrapper">
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+            <h2>Sumário</h2>
+            <ol>
+                <li><a href="#c1">Partes Contratantes</a></li>
+                <li><a href="#c2">Objeto e Definições</a></li>
+                <li><a href="#c3">Do Plano e Vigência</a></li>
+                <li><a href="#c4">Remuneração e Pagamento</a></li>
+                <li><a href="#c5">Obrigações da Contratada</a></li>
+                <li><a href="#c6">Obrigações da Contratante</a></li>
+                <li><a href="#c7">Proteção de Dados – LGPD</a></li>
+                <li><a href="#c8">Direitos de Propriedade Intelectual</a></li>
+                <li><a href="#c9">Sigilo e Confidencialidade</a></li>
+                <li><a href="#c10">Limitação de Responsabilidade</a></li>
+                <li><a href="#c11">Suporte Técnico e SLA</a></li>
+                <li><a href="#c12">Rescisão Contratual</a></li>
+                <li><a href="#c13">Penalidades e Multas</a></li>
+                <li><a href="#c14">Disposições Gerais</a></li>
+                <li><a href="#c15">Foro e Legislação Aplicável</a></li>
+                <li><a href="#assinaturas">Assinaturas</a></li>
+            </ol>
+        </nav>
+
+        <!-- Parties -->
+        <section id="c1" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">01</div>
+                <h2>Partes Contratantes</h2>
+            </div>
+
+            <div class="parties-block">
+                <div class="party-card contratada">
+                    <h3>Contratada (Prestadora)</h3>
+                    <div class="party-field">
+                        <label>Razão Social</label>
+                        <div class="value">[RAZÃO SOCIAL DA EMPRESA]</div>
+                    </div>
+                    <div class="party-field">
+                        <label>CNPJ</label>
+                        <div class="value">[CNPJ DA EMPRESA]</div>
+                    </div>
+                    <div class="party-field">
+                        <label>Endereço</label>
+                        <div class="value">Belo Horizonte – MG, Brasil</div>
+                    </div>
+                    <div class="party-field">
+                        <label>E-mail Comercial</label>
+                        <div class="value">comercial@hescolla.com.br</div>
+                    </div>
+                    <div class="party-field">
+                        <label>Representante Legal</label>
+                        <div class="value blank">&nbsp;</div>
+                    </div>
+                </div>
+
+                <div class="party-card contratante">
+                    <h3>Contratante (Instituição)</h3>
+                    <div class="party-field">
+                        <label>Razão Social / Nome</label>
+                        <div class="value blank">&nbsp;</div>
+                    </div>
+                    <div class="party-field">
+                        <label>CNPJ / CPF</label>
+                        <div class="value blank">&nbsp;</div>
+                    </div>
+                    <div class="party-field">
+                        <label>Endereço Completo</label>
+                        <div class="value blank">&nbsp;</div>
+                    </div>
+                    <div class="party-field">
+                        <label>E-mail Institucional</label>
+                        <div class="value blank">&nbsp;</div>
+                    </div>
+                    <div class="party-field">
+                        <label>Representante Legal</label>
+                        <div class="value blank">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>As partes acima identificadas celebram o presente <strong>Contrato de Prestação de Serviços de Tecnologia</strong>, mediante as cláusulas e condições a seguir estabelecidas, que mutuamente aceitam e se obrigam a cumprir.</p>
+        </section>
+
+        <!-- Cláusula 2 -->
+        <section id="c2" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">02</div>
+                <h2>Objeto e Definições</h2>
+            </div>
+            <p><strong>2.1.</strong> O presente contrato tem como objeto a prestação de serviços de <strong>tecnologia da informação em modelo SaaS (Software as a Service)</strong>, pela Contratada à Contratante, consistente no acesso e utilização da plataforma digital denominada <strong>HeScolla</strong>, destinada ao gerenciamento eletrônico de controle de entrada e saída de estudantes em instituições de ensino, com recursos de segurança, autenticação por QR Code, gestão de chamadas e liberação de alunos.</p>
+
+            <p><strong>2.2.</strong> Para fins deste contrato, adotam-se as seguintes definições:</p>
+            <ul>
+                <li><strong>Plataforma HeScolla:</strong> sistema de software composto pelos aplicativos móveis "HeScolla" (para responsáveis) e "HeScolla Estudante" (para alunos), além do painel de gestão escolar, todos operados pela Contratada sobre infraestrutura em nuvem.</li>
+                <li><strong>Usuário Responsável:</strong> pai, mãe ou responsável legal cadastrado na plataforma para controle de saída do estudante.</li>
+                <li><strong>Funcionário da Escola:</strong> profissional da Contratante habilitado a operar o módulo de chamada e liberação de alunos.</li>
+                <li><strong>Estudante:</strong> aluno da Contratante cujos dados são gerenciados na plataforma.</li>
+                <li><strong>Token de Autenticação:</strong> código criptografado único de acesso ao aplicativo do Estudante, gerado por QR Code, com validade vinculada ao dispositivo autorizado.</li>
+                <li><strong>Dados Pessoais:</strong> qualquer informação relacionada a pessoa natural identificada ou identificável, conforme definição da Lei nº 13.709/2018 (LGPD).</li>
+                <li><strong>Dados Sensíveis:</strong> dados pessoais sobre origem racial ou étnica, convicção religiosa, opinião política, filiação, dado referente à saúde ou à vida sexual, dado genético ou biométrico, conforme art. 5º, II da LGPD.</li>
+                <li><strong>SLA:</strong> Acordo de Nível de Serviço (Service Level Agreement), parâmetros mínimos de disponibilidade e suporte garantidos pela Contratada.</li>
+            </ul>
+            <p class="paragrafo-unico"><strong>§ Único.</strong> Os serviços objeto deste contrato não incluem a integração com sistemas legados da Contratante, desenvolvimento de funcionalidades exclusivas fora do escopo da plataforma padrão ou fornecimento de equipamentos de hardware, salvo se expressamente pactuado em aditivo específico.</p>
+        </section>
+
+        <!-- Cláusula 3 -->
+        <section id="c3" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">03</div>
+                <h2>Do Plano, Licenciamento e Vigência</h2>
+            </div>
+            <p><strong>3.1.</strong> A Contratante contrata o seguinte plano de acesso à plataforma HeScolla:</p>
+
+            <table class="plans-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Descrição</th>
+                        <th>Detalhamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plano</strong></td>
+                        <td class="blank" style="border-bottom:1px solid rgba(255,255,255,0.1); font-style: italic;">___________________</td>
+                        <td>Básico / Profissional / Institucional</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nº de Estudantes</strong></td>
+                        <td class="blank" style="font-style: italic;">___________________</td>
+                        <td>Alunos ativos cadastrados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nº de Unidades</strong></td>
+                        <td class="blank" style="font-style: italic;">___________________</td>
+                        <td>Câmpus / unidades escolares</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Módulos Ativos</strong></td>
+                        <td colspan="2">Chamada por QR Code · Liberação por Funcionário · Histórico de Saída Autônoma · App do Estudante</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vigência</strong></td>
+                        <td class="blank" style="font-style: italic;">___________________</td>
+                        <td>12 meses (padrão) com renovação automática</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>3.2.</strong> O presente contrato vigorará pelo prazo estabelecido no item acima, contado a partir da data de sua assinatura, <strong>renovando-se automaticamente</strong> por iguais e sucessivos períodos, salvo manifestação contrária de qualquer das partes, por escrito, com antecedência mínima de <strong>30 (trinta) dias</strong> antes do vencimento.</p>
+
+            <p><strong>3.3.</strong> A licença de uso concedida à Contratante é de natureza <strong>não exclusiva, intransferível e limitada</strong> ao objeto deste contrato, não podendo ser sublicenciada, cedida ou compartilhada com terceiros não vinculados à relação escolar.</p>
+
+            <p><strong>3.4.</strong> O acesso à plataforma somente será ativado após a quitação da primeira mensalidade ou taxa de implantação, conforme o caso, e a conclusão do processo de onboarding definido pela Contratada.</p>
+        </section>
+
+        <!-- Cláusula 4 -->
+        <section id="c4" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">04</div>
+                <h2>Remuneração, Pagamento e Reajuste</h2>
+            </div>
+            <p><strong>4.1.</strong> Pela prestação dos serviços descritos neste contrato, a Contratante pagará à Contratada o valor mensal de:</p>
+
+            <div class="highlight-box">
+                <p>R$ <span style="font-size:1.25rem; letter-spacing:1px;">_______________</span> (_______________________________ reais), pagos até o dia <strong>___</strong> de cada mês, mediante boleto bancário, Pix ou transferência bancária, conforme dados informados em nota fiscal.</p>
+            </div>
+
+            <p><strong>4.2.</strong> O não pagamento na data de vencimento sujeitará a Contratante ao pagamento de:</p>
+            <ul>
+                <li><strong>Multa moratória</strong> de <strong>2% (dois por cento)</strong> sobre o valor em atraso;</li>
+                <li><strong>Juros de mora</strong> de <strong>1% (um por cento) ao mês</strong>, calculados pro rata die;</li>
+                <li><strong>Correção monetária</strong> pelo IPCA/IBGE, acumulado no período de inadimplência.</li>
+            </ul>
+
+            <p><strong>4.3.</strong> O inadimplemento superior a <strong>15 (quinze) dias corridos</strong> autorizará a Contratada a suspender temporariamente o acesso à plataforma, mediante notificação por e-mail, sem que tal medida configure rescisão contratual ou gere qualquer indenização à Contratante.</p>
+
+            <p><strong>4.4.</strong> Os valores contratados serão reajustados <strong>anualmente</strong>, na data de aniversário do contrato, pelo índice acumulado do <strong>IPCA (Índice de Preços ao Consumidor Amplo)</strong> apurado pelo IBGE nos 12 (doze) meses anteriores, ou pelo índice que vier a substituí-lo.</p>
+
+            <p><strong>4.5.</strong> Qualquer alteração de plano, inclusão de novas unidades escolares ou aumento no número de estudantes ativos ensejará a emissão de proposta comercial complementar, sujeita à anuência expressa da Contratante.</p>
+
+            <p class="paragrafo-unico"><strong>§ Único.</strong> A Contratada emitirá Nota Fiscal de Serviços Eletrônica (NFS-e) correspondente a cada pagamento, com discriminação dos serviços prestados, no prazo de até 5 (cinco) dias úteis após a compensação do pagamento.</p>
+        </section>
+
+        <!-- Cláusula 5 -->
+        <section id="c5" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">05</div>
+                <h2>Obrigações da Contratada</h2>
+            </div>
+            <p>São obrigações da Contratada:</p>
+            <ol>
+                <li>Disponibilizar o acesso à plataforma HeScolla com as funcionalidades descritas no plano contratado, garantindo o nível de serviço estipulado na Cláusula 11 (SLA);</li>
+                <li>Realizar a <strong>manutenção preventiva e corretiva</strong> da plataforma, comunicando previamente eventuais interrupções programadas com antecedência mínima de <strong>48 horas</strong>, exceto em casos de emergência;</li>
+                <li>Promover a <strong>segurança dos dados</strong> armazenados, adotando medidas técnicas e organizacionais adequadas para proteção contra acesso não autorizado, vazamento, perda ou destruição de informações, em conformidade com a LGPD;</li>
+                <li>Realizar <strong>backup automático</strong> dos dados da Contratante com frequência mínima diária, garantindo a recuperação dos dados em caso de falha sistêmica;</li>
+                <li>Prestar suporte técnico nos termos da Cláusula 11 deste instrumento;</li>
+                <li>Comunicar a Contratante, em até <strong>48 horas</strong>, a ocorrência de qualquer incidente de segurança que envolva dados pessoais de seus usuários;</li>
+                <li>Manter atualizados os aplicativos móveis (HeScolla e HeScolla Estudante) nas lojas Google Play e Apple App Store, garantindo compatibilidade com as versões de sistema operacional mais recentes;</li>
+                <li>Não compartilhar, vender ou ceder dados pessoais da Contratante ou de seus usuários a terceiros para fins comerciais;</li>
+                <li>Emitir relatórios de disponibilidade mensal, quando solicitado pela Contratante.</li>
+            </ol>
+        </section>
+
+        <!-- Cláusula 6 -->
+        <section id="c6" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">06</div>
+                <h2>Obrigações da Contratante</h2>
+            </div>
+            <p>São obrigações da Contratante:</p>
+            <ol>
+                <li>Efetuar os pagamentos nas datas e condições estabelecidas neste contrato;</li>
+                <li>Designar ao menos um <strong>responsável técnico interno</strong> (Coordenador ou Administrador) para interlocução com a Contratada e gestão da plataforma no âmbito da instituição;</li>
+                <li>Garantir que o uso da plataforma ocorra <strong>exclusivamente para os fins previstos</strong> neste contrato, sendo vedado o uso para finalidades ilícitas ou que violem direitos de terceiros;</li>
+                <li>Zelar pelas <strong>credenciais de acesso</strong> (usuário e senha), sendo responsável por qualquer uso indevido decorrente de negligência na guarda dessas informações;</li>
+                <li>Obter e manter o <strong>consentimento dos responsáveis legais</strong> dos estudantes menores de idade para o tratamento de dados pessoais no âmbito da plataforma, cumprindo as exigências do art. 14 da LGPD;</li>
+                <li>Comunicar à Contratada, com antecedência mínima de <strong>30 dias</strong>, qualquer alteração significativa no número de estudantes, unidades ou mudanças estruturais que impactem o uso da plataforma;</li>
+                <li>Não efetuar <strong>engenharia reversa, descompilação ou modificação</strong> dos softwares e sistemas fornecidos pela Contratada;</li>
+                <li>Informar imediatamente à Contratada qualquer suspeita de uso indevido, invasão ou incidente de segurança envolvendo a plataforma;</li>
+                <li>Disponibilizar infraestrutura mínima de conectividade (internet de banda larga) nos pontos de uso da plataforma dentro da instituição;</li>
+                <li>Cooperar prontamente com as auditorias e verificações de conformidade realizadas pela Contratada em relação ao cumprimento da LGPD.</li>
+            </ol>
+        </section>
+
+        <!-- Cláusula 7 -->
+        <section id="c7" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">07</div>
+                <h2>Proteção de Dados Pessoais – LGPD</h2>
+            </div>
+            <p><strong>7.1.</strong> As partes reconhecem que o presente contrato implica no tratamento de dados pessoais, incluindo dados de crianças e adolescentes, e se comprometem a observar rigorosamente as disposições da <strong>Lei nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD)</strong> e demais normas aplicáveis.</p>
+
+            <p><strong>7.2.</strong> Para fins de aplicação da LGPD, as partes assumem os seguintes papéis:</p>
+            <ul>
+                <li><strong>Controladora dos Dados:</strong> a Contratante (Instituição de Ensino), que determina as finalidades e os meios de tratamento dos dados pessoais dos estudantes e responsáveis;</li>
+                <li><strong>Operadora dos Dados:</strong> a Contratada (HeScolla), que realiza o tratamento de dados pessoais em nome e conforme as instruções da Contratante.</li>
+            </ul>
+
+            <p><strong>7.3.</strong> A Contratante declara e garante que:</p>
+            <ol>
+                <li>Possui base legal adequada para o tratamento de todos os dados pessoais inseridos na plataforma, sendo que, para dados de crianças (<em>menores de 12 anos</em>), o consentimento será obrigatoriamente obtido de ao menos um dos pais ou responsável legal, conforme art. 14, §1º da LGPD;</li>
+                <li>Informou os titulares dos dados (responsáveis, estudantes maiores de 16 anos e funcionários) sobre o tratamento de seus dados no âmbito da plataforma HeScolla;</li>
+                <li>Não inserirá na plataforma dados pessoais sensíveis que não sejam estritamente necessários para a execução dos serviços (ex.: dados de saúde, étnico-raciais).</li>
+            </ol>
+
+            <p><strong>7.4.</strong> A Contratada compromete-se a:</p>
+            <ol>
+                <li>Tratar os dados pessoais exclusivamente conforme as <strong>instruções documentadas</strong> da Contratante e para as finalidades previstas neste contrato;</li>
+                <li>Adotar medidas técnicas de segurança adequadas, incluindo criptografia de dados em trânsito (TLS/HTTPS) e em repouso, controle de acesso baseado em funções e autenticação segura;</li>
+                <li>Notificar a Contratante e, quando aplicável, a <strong>ANPD (Autoridade Nacional de Proteção de Dados)</strong>, sobre incidentes de segurança envolvendo dados pessoais, no prazo de até <strong>72 horas</strong> após o conhecimento do incidente;</li>
+                <li>Excluir ou devolver todos os dados pessoais ao término do contrato, dentro do prazo de <strong>90 (noventa) dias</strong>, salvo obrigação legal de conservação;</li>
+                <li>Permitir e cooperar com auditorias de conformidade realizadas pela Contratante ou por terceiros por ela designados, mediante aviso prévio de 15 dias;</li>
+                <li>Manter registro das operações de tratamento de dados (Art. 37 LGPD).</li>
+            </ol>
+
+            <div class="warning-box">
+                <p><strong>⚠ Atenção:</strong> Qualquer uso da plataforma para o tratamento de dados pessoais em desacordo com as finalidades previstas neste contrato e com a LGPD será de <strong>exclusiva responsabilidade da parte infratora</strong>, que responderá pelos danos causados aos titulares dos dados e pelas sanções administrativas aplicáveis.</p>
+            </div>
+
+            <p><strong>7.5.</strong> A Contratante autoriza a Contratada a utilizar suboperadores de dados (como Supabase – serviço de banco de dados em nuvem) para a execução dos serviços, sendo a Contratada responsável por garantir que tais suboperadores cumpram padrões de segurança equivalentes aos aqui estabelecidos.</p>
+        </section>
+
+        <!-- Cláusula 8 -->
+        <section id="c8" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">08</div>
+                <h2>Direitos de Propriedade Intelectual</h2>
+            </div>
+            <p><strong>8.1.</strong> Todos os direitos de propriedade intelectual relacionados à plataforma HeScolla, incluindo, mas não se limitando a: código-fonte, algoritmos, design visual, marcas, logotipos, nomes, bases de dados próprias e documentação técnica, são e permanecerão de <strong>titularidade exclusiva da Contratada</strong>, sendo protegidos pela Lei nº 9.279/1996 (Lei de Propriedade Industrial), Lei nº 9.610/1998 (Lei de Direitos Autorais) e Lei nº 9.609/1998 (Lei de Software).</p>
+
+            <p><strong>8.2.</strong> O presente contrato não transfere à Contratante qualquer direito de propriedade sobre a plataforma ou seus componentes, concedendo apenas uma <strong>licença de uso limitada, não exclusiva e intransferível</strong>, pelo prazo e nas condições aqui estabelecidas.</p>
+
+            <p><strong>8.3.</strong> Os dados inseridos pela Contratante e pelos usuários da Contratante na plataforma (dados de estudantes, responsáveis, histórico de chamadas etc.) são de <strong>propriedade da Contratante</strong>, cabendo à Contratada o papel de mera depositária e operadora tecnológica dessas informações.</p>
+
+            <p><strong>8.4.</strong> Fica expressamente vedado à Contratante reproduzir, publicar, modificar, distribuir, realizar engenharia reversa ou criar obras derivadas da plataforma HeScolla, sob pena de responsabilização civil e criminal.</p>
+        </section>
+
+        <!-- Cláusula 9 -->
+        <section id="c9" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">09</div>
+                <h2>Sigilo e Confidencialidade</h2>
+            </div>
+            <p><strong>9.1.</strong> As partes se comprometem a manter em absoluto sigilo todas as informações confidenciais trocadas em razão da execução deste contrato, incluindo, sem limitação: dados dos estudantes e responsáveis, dados financeiros, estratégias comerciais, informações técnicas da plataforma, processos internos e quaisquer outros dados de caráter sensível.</p>
+
+            <p><strong>9.2.</strong> A obrigação de confidencialidade:</p>
+            <ul>
+                <li>Aplica-se a todos os colaboradores, prepostos e subcontratados das partes que tiverem acesso às informações confidenciais;</li>
+                <li>Subsistirá pelo prazo de <strong>5 (cinco) anos</strong> após a extinção do contrato, independentemente do motivo;</li>
+                <li>Não se aplica a informações que sejam de domínio público ou que devam ser divulgadas por imposição legal ou ordem judicial.</li>
+            </ul>
+
+            <p><strong>9.3.</strong> A parte que violar a obrigação de confidencialidade ficará sujeita ao pagamento de indenização por perdas e danos, sem prejuízo das demais sanções previstas neste contrato e na legislação aplicável.</p>
+        </section>
+
+        <!-- Cláusula 10 -->
+        <section id="c10" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">10</div>
+                <h2>Limitação de Responsabilidade</h2>
+            </div>
+            <p><strong>10.1.</strong> A Contratada não será responsável por danos decorrentes de:</p>
+            <ol>
+                <li>Falhas na infraestrutura de conectividade da Contratante ou de seus usuários (falta de internet, falha de rede local);</li>
+                <li>Uso indevido da plataforma por funcionários, responsáveis ou terceiros autorizados pela Contratante;</li>
+                <li>Casos fortuitos ou de força maior (art. 393 do Código Civil), incluindo falhas de energia, desastres naturais, pandemias, bloqueios de infraestrutura de provedores de nuvem ou intervenções governamentais;</li>
+                <li>Perda de dados decorrente de ações deliberadas de usuários da própria Contratante;</li>
+                <li>Incompatibilidade de dispositivos móveis dos usuários com os requisitos mínimos dos aplicativos, desde que tais requisitos tenham sido previamente informados.</li>
+            </ol>
+
+            <p><strong>10.2.</strong> A responsabilidade total e acumulada da Contratada por quaisquer danos, diretos ou indiretos, decorrentes deste contrato, ficará <strong>limitada ao valor das mensalidades efetivamente pagas</strong> pela Contratante nos <strong>6 (seis) meses imediatamente anteriores</strong> ao evento causador do dano.</p>
+
+            <p><strong>10.3.</strong> Em nenhuma hipótese a Contratada responderá por lucros cessantes, danos morais coletivos ou danos indiretos não previstos expressamente neste contrato.</p>
+
+            <div class="highlight-box">
+                <p><strong>Nota importante:</strong> A plataforma HeScolla é uma ferramenta de apoio tecnológico à gestão de segurança escolar. A Contratada não substitui nem se responsabiliza pelas decisões pedagógicas, de segurança física ou de tutela dos estudantes, que permanecem como responsabilidade exclusiva da Instituição e dos responsáveis legais.</p>
+            </div>
+        </section>
+
+        <!-- Cláusula 11 -->
+        <section id="c11" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">11</div>
+                <h2>Suporte Técnico e Nível de Serviço (SLA)</h2>
+            </div>
+            <p><strong>11.1.</strong> A Contratada disponibilizará suporte técnico à Contratante nas seguintes modalidades e prazos:</p>
+
+            <table class="plans-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Suporte</th>
+                        <th>Canal</th>
+                        <th>Horário</th>
+                        <th>Tempo de Resposta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Crítico</strong> (plataforma indisponível)</td>
+                        <td>E-mail / WhatsApp Comercial</td>
+                        <td>7 dias / 24h</td>
+                        <td>Até <strong>4 horas</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alta Prioridade</strong> (funcionalidade comprometida)</td>
+                        <td>E-mail</td>
+                        <td>Dias úteis – 8h às 18h</td>
+                        <td>Até <strong>8 horas úteis</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Normal</strong> (dúvidas e orientações)</td>
+                        <td>E-mail: suporte@hescolla.com.br</td>
+                        <td>Dias úteis – 8h às 18h</td>
+                        <td>Até <strong>2 dias úteis</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>11.2.</strong> A Contratada garante um índice de <strong>disponibilidade mínima da plataforma de 99% (noventa e nove por cento)</strong> ao mês, excluídas as janelas de manutenção programada previamente comunicadas.</p>
+
+            <p><strong>11.3.</strong> Em caso de descumprimento do SLA de disponibilidade (índice inferior a 99% em determinado mês), a Contratante terá direito a um <strong>crédito de serviço</strong> proporcional ao tempo de indisponibilidade não justificada, a ser aplicado na próxima fatura, desde que a solicitação seja feita em até 30 dias após o evento.</p>
+
+            <p><strong>11.4.</strong> Não configuram violação de SLA as interrupções decorrentes de manutenção programada (comunicada com 48h de antecedência), força maior, ou falhas de responsabilidade de provedores de telecomunicações externos ao controle da Contratada.</p>
+        </section>
+
+        <!-- Cláusula 12 -->
+        <section id="c12" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">12</div>
+                <h2>Rescisão Contratual</h2>
+            </div>
+            <p><strong>12.1.</strong> O presente contrato poderá ser rescindido:</p>
+
+            <p><strong>12.1.1. Por resilição bilateral:</strong> mediante acordo escrito entre as partes, com antecedência mínima de <strong>30 (trinta) dias</strong>, sem ônus para qualquer das partes, ressalvadas as obrigações vencidas.</p>
+
+            <p><strong>12.1.2. Por rescisão unilateral da Contratante:</strong> a qualquer tempo, mediante notificação escrita com antecedência mínima de <strong>30 (trinta) dias</strong>, ficando sujeita ao pagamento de <strong>multa rescisória</strong> equivalente a:</p>
+            <ul>
+                <li>O equivalente a <strong>3 (três) mensalidades</strong>, caso a rescisão ocorra nos primeiros 12 meses do contrato;</li>
+                <li>O equivalente a <strong>1 (uma) mensalidade</strong>, caso a rescisão ocorra após os primeiros 12 meses.</li>
+            </ul>
+
+            <p><strong>12.1.3. Por rescisão imotivada da Contratada:</strong> a Contratada poderá rescindir o contrato sem ônus, mediante notificação à Contratante com antecedência mínima de <strong>60 (sessenta) dias</strong>, garantindo a exportação dos dados da Contratante nesse período.</p>
+
+            <p><strong>12.1.4. Por descumprimento contratual (justa causa):</strong> qualquer das partes poderá rescindir o contrato, sem multa ou indenização, no caso de:</p>
+            <ul>
+                <li>Inadimplemento financeiro da Contratante por período superior a <strong>30 (trinta) dias</strong>, após notificação extrajudicial;</li>
+                <li>Violação grave de quaisquer cláusulas deste instrumento, não sanada no prazo de <strong>15 (quinze) dias</strong> após notificação escrita;</li>
+                <li>Decretação de falência, recuperação judicial ou insolvência civil de qualquer das partes;</li>
+                <li>Uso da plataforma pela Contratante para fins ilícitos ou em desacordo com as políticas de uso.</li>
+            </ul>
+
+            <p><strong>12.2.</strong> Em qualquer hipótese de rescisão, a Contratada disponibilizará os dados da Contratante para exportação pelo prazo de <strong>90 (noventa) dias</strong> após a data efetiva de encerramento, em formato estruturado (JSON ou CSV), findo o qual os dados serão eliminados dos servidores.</p>
+        </section>
+
+        <!-- Cláusula 13 -->
+        <section id="c13" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">13</div>
+                <h2>Penalidades e Multas</h2>
+            </div>
+            <p><strong>13.1.</strong> O descumprimento das obrigações previstas neste contrato sujeitará a parte infratora, além das multas específicas já previstas, ao pagamento de:</p>
+            <ul>
+                <li><strong>Multa compensatória</strong> de <strong>10% (dez por cento)</strong> sobre o valor total do contrato (soma das mensalidades restantes), em caso de rescisão por justa causa imputável à parte infratora;</li>
+                <li><strong>Perdas e danos</strong> efetivamente comprovadas e imputáveis à parte infratora, conforme arts. 402 a 405 do Código Civil Brasileiro.</li>
+            </ul>
+
+            <p><strong>13.2.</strong> Pela violação das cláusulas de confidencialidade (Cláusula 9) ou proteção de dados (Cláusula 7), a parte infratora estará sujeita, adicionalmente, às sanções administrativas previstas no art. 52 da LGPD, sendo responsável por quaisquer multas ou penalidades aplicadas pela ANPD em decorrência de sua conduta.</p>
+
+            <p><strong>13.3.</strong> As penalidades previstas neste contrato são cumulativas com as demais sanções civis e penais previstas na legislação brasileira.</p>
+        </section>
+
+        <!-- Cláusula 14 -->
+        <section id="c14" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">14</div>
+                <h2>Disposições Gerais</h2>
+            </div>
+            <p><strong>14.1.</strong> O presente contrato representa o acordo integral entre as partes com relação ao seu objeto, substituindo todas as negociações, propostas e entendimentos anteriores, verbais ou escritos, sobre a matéria.</p>
+
+            <p><strong>14.2.</strong> Qualquer alteração ao presente contrato somente será válida e eficaz se realizada por meio de <strong>aditivo contratual escrito e assinado</strong> por ambas as partes ou seus representantes legais devidamente habilitados.</p>
+
+            <p><strong>14.3.</strong> A tolerância ou o não exercício de qualquer direito ou faculdade previsto neste contrato não constituirá novação, renúncia ou precedente, podendo a parte titular exercê-lo a qualquer momento, dentro dos limites legais.</p>
+
+            <p><strong>14.4.</strong> Se qualquer disposição deste contrato for considerada inválida, ilegal ou inexequível por qualquer autoridade competente, as demais disposições permanecerão em pleno vigor e efeito.</p>
+
+            <p><strong>14.5.</strong> As partes declaram que este contrato foi celebrado de boa-fé, livre de qualquer vício de consentimento (erro, dolo, coação, estado de perigo ou lesão), estando plenamente cientes de seu conteúdo e consequências jurídicas.</p>
+
+            <p><strong>14.6.</strong> A Contratante autoriza a Contratada a mencionar o nome e logotipo da Instituição como cliente de referência em seu portfólio comercial e materiais de marketing, salvo manifestação contrária expressa da Contratante.</p>
+
+            <p><strong>14.7.</strong> Toda notificação ou comunicação formal entre as partes deverá ser realizada por escrito, preferencialmente por e-mail com confirmação de leitura ou por correspondência com aviso de recebimento (AR), para os endereços indicados no preâmbulo deste contrato.</p>
+
+            <p><strong>14.8.</strong> As partes elegem, na medida do possível, a <strong>mediação e a arbitragem</strong> como meios preferências de resolução de conflitos decorrentes deste contrato, antes de recorrer ao Poder Judiciário, conforme Lei nº 13.129/2015 (Lei de Arbitragem).</p>
+        </section>
+
+        <!-- Cláusula 15 -->
+        <section id="c15" class="clause">
+            <div class="clause-header">
+                <div class="clause-num">15</div>
+                <h2>Foro e Legislação Aplicável</h2>
+            </div>
+            <p><strong>15.1.</strong> O presente contrato é regido pelas leis da República Federativa do Brasil, notadamente:</p>
+            <ul>
+                <li>Lei nº 10.406/2002 (Código Civil Brasileiro);</li>
+                <li>Lei nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD);</li>
+                <li>Lei nº 9.609/1998 (Lei de Software);</li>
+                <li>Lei nº 9.610/1998 (Lei de Direitos Autorais);</li>
+                <li>Lei nº 12.965/2014 (Marco Civil da Internet);</li>
+                <li>Lei nº 8.078/1990 (Código de Defesa do Consumidor), quando aplicável.</li>
+            </ul>
+
+            <p><strong>15.2.</strong> Fica eleito o Foro da Comarca de <strong>Belo Horizonte, Estado de Minas Gerais</strong>, para dirimir quaisquer controvérsias oriundas do presente contrato que não puderem ser resolvidas pelos meios alternativos previstos na Cláusula 14.8, com renúncia expressa de qualquer outro, por mais privilegiado que seja.</p>
+        </section>
+
+        <!-- Signatures -->
+        <section id="assinaturas" class="signature-section">
+            <h2>Assinaturas</h2>
+            <p class="date-line">E por estarem justas e acordadas, as partes assinam o presente instrumento em 2 (duas) vias de igual teor e forma, na cidade de <span class="blank">&nbsp;</span>, em <span class="blank">&nbsp;</span> de <span class="blank">&nbsp;</span> de <span class="blank">&nbsp;</span>.</p>
+
+            <div class="sig-grid">
+                <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <div class="sig-name">[RAZÃO SOCIAL DA CONTRATADA]</div>
+                    <div class="sig-title">CNPJ: [CNPJ] — Contratada</div>
+                    <div class="sig-title" style="margin-top:0.25rem;">Representante Legal: ___________________________</div>
+                </div>
+                <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <div class="sig-name">_________________________________</div>
+                    <div class="sig-title">CNPJ/CPF: _______________ — Contratante</div>
+                    <div class="sig-title" style="margin-top:0.25rem;">Representante Legal: ___________________________</div>
+                </div>
+            </div>
+
+            <div class="witnesses">
+                <h3>Testemunhas</h3>
+                <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <div class="sig-name">1ª Testemunha: ____________________________</div>
+                    <div class="sig-title">CPF: _______________________</div>
+                </div>
+                <div class="sig-block">
+                    <div class="sig-line"></div>
+                    <div class="sig-name">2ª Testemunha: ____________________________</div>
+                    <div class="sig-title">CPF: _______________________</div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- /contract-wrapper -->
+
+    <footer>
+        <p>&copy; 2026 HeScolla. Todos os direitos reservados. &nbsp;|&nbsp; <a href="mailto:comercial@hescolla.com.br">comercial@hescolla.com.br</a> &nbsp;|&nbsp; <a href="docs/privacy.html">Política de Privacidade</a></p>
+        <p style="margin-top:0.5rem; font-size:0.75rem; opacity:0.5;">Documento sujeito à revisão jurídica especializada antes da assinatura. Não constitui aconselhamento legal.</p>
+    </footer>
+
+</body>
+</html>
